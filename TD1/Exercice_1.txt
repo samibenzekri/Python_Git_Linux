@@ -1,0 +1,13 @@
+cd /
+ls
+pwd
+mkdir test
+cd /home
+cd ~
+cd ..
+cd ..
+cd ~
+mkdir test
+cd test
+pwd
+
