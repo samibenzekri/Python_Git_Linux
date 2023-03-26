@@ -1,0 +1,25 @@
+# 1. Exécuter la commande suivante :
+curl https://en.wikipedia.org/wiki/List_of_cyberattacks > cyberattacks.txt
+
+# 2. Utiliser grep pour extraire toutes les lignes contenant le mot-clé "meta"
+grep "meta" cyberattacks.txt > meta_lines.txt
+
+# 3. Extraire maintenant "meta" et le premier mot suivant. Utiliser les options de grep pour activer l'utilisation des regex (expressions régulières)
+grep -o -E "meta \w+" meta_lines.txt > meta_and_next_word.txt
+
+# 4. Extraire uniquement le mot suivant (mais pas le mot-clé "meta")
+grep -o -E "\w+$" meta_and_next_word.txt > next_words.txt
+
+# 5. Essayons maintenant des modèles plus intéressants (mais complexes). Vous pouvez utiliser vim pour ouvrir le fichier et rechercher des modèles utiles. Extrayons l'introduction
+# Utiliser grep pour récupérer le paragraphe correspondant à une phrase présente uniquement dans l'introduction.
+grep -P 'A <a href="/wiki/Cyberattack" title="Cyberattack">cyberattack</a> is any type' cyberattacks.txt > introduction.txt
+
+# Si le texte évolue au fil du temps, essayez plutôt la commande suivante :
+grep -A1 'mw-content-text' cyberattacks.txt | grep -v 'mw-content-text' > stable_introduction.txt
+
+# 6. À vous de jouer
+# — Extraire le titre de l'onglet
+grep -o -P '(?<=<title>).*(?=</title>)' cyberattacks.txt > tab_title.txt
+
+# — Créer uneliste des cyberattaques basée sur les titres de sections
+grep -o -P '(?<=<span class="mw-headline" id=").*(?=">)' cyberattacks.txt > section_titles.txt

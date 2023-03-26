@@ -1,0 +1,2 @@
+ls -l / | grep " bin" | awk '{print $5}'
+ls -ld --time-style=long-iso /bin | awk '{print $6 "-" $7 "-" $8}' | sed -E 's/([0-9]+)-([a-zA-Z]+)-([0-9]+)/\3-\2-\1/'
