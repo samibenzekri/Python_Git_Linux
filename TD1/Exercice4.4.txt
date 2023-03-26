@@ -1,0 +1,14 @@
+sudo apt update
+sudo apt upgrade
+sudo apt install cmatrix
+cmatrix
+sudo apt install tmux
+tmux
+tmux new-session
+tmux list-sessions
+tmux attach-session -t 0
+tmux attach-session -t 1
+tmux list-sessions
+tmux kill-session -t 0
+tmux kill-session -t 1
+tmux list-sessions

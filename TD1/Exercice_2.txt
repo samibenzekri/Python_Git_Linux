@@ -1,0 +1,12 @@
+cd ~
+pwd
+mkdir linux_ex_1
+cd linux_ex_1
+touch Sami_Benzekri.txt
+mkdir notes
+mv Sami_Benzekri.txt notes/
+cd notes
+mv Sami_Benzekri.txt Sami_Benzekri2023.txt
+cd ..
+cp -r notes notes_2022
+rm -rv notes

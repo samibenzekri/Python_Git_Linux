@@ -1,0 +1,7 @@
+cmatrix -h
+cmatrix -C white
+cmatrix -s 10
+cmatrix -s 10 -C blue
+man cmatrix
+tmux -h
+man tmux

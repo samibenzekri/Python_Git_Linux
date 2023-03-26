@@ -1,0 +1,18 @@
+touch linux_ex_1/credentials
+echo "Name: John Doe" > linux_ex_1/credentials
+cat linux_ex_1/credentials
+ls -l linux_ex_1/credentials
+chmod 444 linux_ex_1/credentials
+ls -l linux_ex_1/credentials
+
+cat linux_ex_1/credentials
+chmod 666 linux_ex_1/credentials
+ls -l linux_ex_1/credentials
+
+cat linux_ex_1/credentials
+chmod u+x,go-r linux_ex_1/credentials
+ls -l linux_ex_1/credentials
+chmod go+r linux_ex_1/credentials
+ls -l linux_ex_1/credentials
+chmod 777 linux_ex_1/credentials
+ls -l linux_ex_1/credentials

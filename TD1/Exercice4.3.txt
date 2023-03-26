@@ -1,0 +1,3 @@
+sudo chmod a+rw .private_file
+sudo chown $USER .private_file
+chmod a+rw .private_file

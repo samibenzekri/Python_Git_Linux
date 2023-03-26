@@ -1,0 +1,4 @@
+echo -e '#!/bin/bash\n\necho "Script running please wait ..."\nsleep 1\necho "Done."' > script_1.sh
+chmod +x script_1.sh
+cat script_1.sh
+./script_1.sh

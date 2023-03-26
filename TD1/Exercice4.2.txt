@@ -1,0 +1,13 @@
+cd /
+sudo touch .private_file
+sudo sh -c 'echo "This is private information." > .private_file'
+sudo cat .private_file
+ls -al
+# La modification du fichier en mode utilisateur normal échouera probablement
+echo "New information" >> .private_file
+
+sudo sh -c 'echo "More private information" >> .private_file'
+sudo cat .private_file
+sudo chmod 777 .private_file
+# Modifiez le fichier manuellement en mode utilisateur normal
+cat .private_file
