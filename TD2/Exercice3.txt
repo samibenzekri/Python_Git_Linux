@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# 1. Créer un script say_hello.sh
+echo '#!/bin/bash
+date_and_time=$(date)
+echo "$date_and_time Hello" >> hellos.txt' > say_hello.sh
+
+# — Rendre le script exécutable
+chmod +x say_hello.sh
+
+# 2. Rendre le script exécutable
+./say_hello.sh
+
+# 3. Utiliser crontab pour planifier l'exécution du script toutes les minutes
+# Sauvegarder la crontab actuelle
+crontab -l > mycron
+
+# Ajouter la nouvelle tâche à la crontab
+echo "* * * * * $(pwd)/say_hello.sh" >> mycron
+
+# Installer la nouvelle crontab
+crontab mycron
+
+# Supprimer le fichier temporaire mycron
+rm mycron
+

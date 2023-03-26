@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# 1. Créer une variable x et lui assigner le texte court "piri pimpin"
+x="piri pimpin"
+
+# 2. Afficher la valeur de cette variable
+echo "Valeur de x:"
+echo "$x"
+echo ""
+
+# 3. Ajouter à cette valeur le texte suivant "piri pimpon"
+x+=" piri pimpon"
+
+# La variable x doit contenir : "piri pimpim piri pimpon"
+echo "Nouvelle valeur de x:"
+echo "$x"
+echo ""
+
+# 4. Créer un dossier nommé "my_programs" et entrer dans ce dossier
+mkdir my_programs
+cd my_programs
+
+# 5. Créer un script nommé "pilou" qui affiche "pilou pilou"
+echo 'echo "pilou pilou"' > pilou.sh
+
+# 6. Exécuter ce script
+bash pilou.sh
+
+# 7. Rendre ce script exécutable
+chmod +x pilou.sh
+
+#9.  Afficher le contenu de la variable PATH
+echo "Contenu de PATH:"
+echo "$PATH"
+echo ""
+
+# 10. Ajouter le chemin de votre emplacement actuel à la variable globale PATH
+export PATH="$PATH:$(pwd)"
+
+# 11. Lorsque vous êtes sûr du résultat, exportez-le
+echo "Nouveau contenu de PATH:"
+echo "$PATH"
+echo ""
+
+# 12. Aller dans votre répertoire personnel
+cd ~
+
+# 13. Exécuter votre script en écrivant seulement son nom
+pilou.sh
+
+# 14. Modifier la valeur de PATH dans le fichier .profile pour la rendre permanente
+echo 'export PATH="$PATH:'"$(pwd)/my_programs"'"' >> .profile
+
+# 15. Créer un nouveau shell et exécuter votre script en utilisant seulement son nom
+bash -i -c "pilou.sh"

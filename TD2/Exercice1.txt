@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Mettre le système à jour
+sudo apt update && sudo apt upgrade -y
+
+# Afficher la version de Linux
+echo "Version de Linux:"
+uname -a
+echo ""
+
+# Afficher les processus en cours et l'utilisation de la mémoire
+echo "Processus en cours et utilisation de la mémoire:"
+ps aux | awk '{print $2, $3, $4, $11}' | head -n 1 && ps aux --sort=-%mem | head -n 6
+echo ""
+
+# Afficher le nombre de processeurs
+echo "Nombre de processeurs:"
+nproc
+echo ""
+
+# Afficher la taille des caches L1, L2 et L3
+echo "Taille des caches L1, L2 et L3:"
+lscpu | grep -E "L1d|L1i|L2|L3"
+echo ""
+
+# Afficher l'espace disque
+echo "Espace disque:"
+df -h
+echo ""
+
+# Afficher les périphériques montés
+echo "Périphériques montés:"
+mount | column -t
+echo ""
+
