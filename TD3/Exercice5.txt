@@ -1,0 +1,26 @@
+# 1. Créer un fichier temporaire vide nommé "temp.ipynb"
+touch temp.ipynb
+
+# 2. Vérifier l'état actuel de git
+git status
+
+# 3. Ajouter une instruction à .gitignore pour empêcher git de suivre ce fichier temporaire
+echo "temp.ipynb" >> .gitignore
+
+# 4. Vérifier l'état actuel de git
+git status
+
+# 5. Créer d'autres fichiers temporaires nommés "temp.aux" et "temp.log"
+touch temp.aux temp.log
+
+# 6. Vérifier l'état actuel de git
+git status
+
+# 7. Modifier votre instruction dans .gitignore pour empêcher git de suivre tout fichier dont le nom commence par "temp"
+echo "temp*" >> .gitignore
+
+# 8. Vérifier l'état actuel de git
+git status
+
+# 9. Utiliser le fichier "exclude" de git pour empêcher git de suivre le dossier ".private"
+echo ".private" >> .git/info/exclude

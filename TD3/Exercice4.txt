@@ -1,0 +1,20 @@
+# 1. Créer trois fichiers vides nommés "requirements.txt", ".gitignore" et ".private"
+touch requirements.txt .gitignore .private
+
+# 2. Vérifier l'état actuel de git
+git status
+
+# 3. Mettre en scène tous les fichiers en une seule fois
+git add .
+
+# 4. Vérifier l'état actuel de git
+git status
+
+# 5. Valider les fichiers en une seule fois
+git commit -m "Ajout des fichiers requirements.txt, .gitignore et .private"
+
+# 6. Vérifier l'état actuel de git
+git status
+
+# 7. Afficher les logs git en une seule ligne
+git log --pretty=oneline

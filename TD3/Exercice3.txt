@@ -1,0 +1,27 @@
+# 1. Créer deux fichiers Python vides nommés "main.py" et "functions.py"
+touch main.py functions.py
+
+# 2. Vérifier l'état actuel de git
+git status
+
+# 3. Mettre en scène uniquement le fichier "main.py"
+git add main.py
+
+# 4. Vérifier l'état actuel de git
+git status
+
+# 5. Valider le fichier avec un message approprié
+git commit -m "Ajout du fichier main.py"
+
+# 6. Vérifier l'état actuel de git
+git status
+
+# 7. Maintenant, mettez en scène et validez le fichier "functions.py"
+git add functions.py
+git commit -m "Ajout du fichier functions.py"
+
+# 8. Vérifier l'état actuel de git
+git status
+
+# 9. Vérifier les journaux git
+git log

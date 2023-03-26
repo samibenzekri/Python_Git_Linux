@@ -1,0 +1,32 @@
+# 1. Créer un dépôt git
+git init
+
+# 2. Vérifier que git a correctement initialisé un dépôt en affichant les fichiers de votre dossier actuel
+ls -la
+
+# 3. Vérifier l'état actuel de git
+git status
+
+# 4. Créer un fichier texte nommé "readme.md" dont le contenu est "# Test repository"
+echo "# Test repository" > readme.md
+
+# 5. Vérifier l'état actuel de git
+git status
+
+# 6. Mettre en scène le fichier
+git add readme.md
+
+# 7. Vérifier l'état actuel de git
+git status
+
+# 8. Valider le fichier
+git commit -m "Ajout du fichier readme.md"
+
+# 9. Vérifier l'état actuel de git
+git status
+
+# 10. Vérifier les journaux git
+git log
+
+# 11. Quelles informations sont affichées ?
+echo "Les informations affichées incluent le commit hash, l'auteur, la date et le message de commit."

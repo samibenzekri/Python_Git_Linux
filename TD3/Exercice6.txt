@@ -1,0 +1,23 @@
+# 1. Ajouter une description en ligne de votre dépôt dans le fichier "readme.md"
+echo "Description en ligne de mon dépôt" > readme.md
+
+# 2. Mettre en scène le fichier "readme.md"
+git add readme.md
+
+# 3. Afficher les modifications apportées à votre répertoire depuis le dernier commit
+git diff HEAD
+
+# 4. Valider les modifications
+git commit -m "Ajout d'une description en ligne dans le fichier readme.md"
+
+# 5. Afficher les modifications apportées depuis le dernier commit
+git diff HEAD
+
+# 6. Afficher à nouveau les modifications apportées à votre répertoire depuis le dernier commit
+git diff HEAD
+
+# 7. Changer quelques mots dans la description du fichier "readme.md"
+echo "Description mise à jour de mon dépôt" > readme.md
+
+# 8. Afficher les modifications apportées depuis le dernier commit
+git diff HEAD

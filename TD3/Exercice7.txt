@@ -1,0 +1,50 @@
+# 1. Supprimer tous vos fichiers
+rm -rf *
+
+# 2. Utiliser Git pour restaurer vos fichiers
+git checkout HEAD .
+
+# 3. Sauvegarder votre dépôt Git ailleurs
+git clone . ../backup
+
+# 4. Supprimer votre répertoire racine, en créer un nouveau vide et utiliser votre sauvegarde pour tout restaurer
+cd ..
+rm -rf git_restore
+mkdir git_restore
+cp -r backup/. git_restore/
+
+# 5. Annuler la mise en scène de votre premier fichier
+git reset HEAD first_file.txt
+
+# 6. Valider vos deux modifications de fichiers directement, sans les mettre en scène
+git commit -a -m "Deux modifications de fichiers sans mise en scène"
+
+# 7. Vérifier l'historique de vos validations. Voyez-vous votre nouvelle validation ?
+git log
+
+# 8. Sans affecter votre dépôt Git, rétablissez l'état de votre répertoire racine tel qu'il était au moment de la prise de vue de votre première validation.
+git checkout <commit-hash>
+
+# 9. Vérifiez l'historique de vos validations. Vous ne voyez pas toutes les validations, n'est-ce pas ? Comment pouvez-vous les voir ?
+git log
+
+# 10. Revenez à la prise de vue de votre dernière validation.
+git checkout <commit-hash>
+
+# 11. Annulez votre deuxième validation en ajoutant une nouvelle validation qui la rétablit.
+git revert <commit-hash>
+
+# 12. Vérifiez le contenu de votre répertoire racine. Vos modifications précédentes ont-elles disparu ?
+ls
+
+# 13. Vérifiez l'historique de vos validations. Voyez-vous votre validation de réversion ?
+git log
+
+# 14. Supprimez les 2 dernières validations de l'historique.
+git reset <commit-hash>
+
+# 15. Vérifiez le contenu de votre répertoire racine. Vos modifications précédentes ont-elles disparu ?
+ls
+
+# 16. Vérifiez l'historique de vos validations. Avez-vous perdu les 2 dernières validations ?
+git log
