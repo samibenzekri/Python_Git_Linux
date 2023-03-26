@@ -1,0 +1,5 @@
+git branch sami
+touch sami.txt
+git add sami.txt
+git commit -m "Ajout Sami"
+git push origin Sami

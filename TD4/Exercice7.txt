@@ -1,0 +1,55 @@
+# 1. Pull the latest changes in the 'master' branch
+git pull
+
+# 2. Create a new local branch named after you and switch to it
+git checkout -b sami
+
+# 3. Create separate commits for each change
+# (a) Clear the whole file
+echo "" > README.md
+git add README.md
+git commit -m "Clear"
+
+# (b) Add a title line "Git interactive rebase"
+echo "# Git interactive rebase" > README.md
+git add README.md
+git commit -m "Add"
+
+# (c) Copy the first paragraph from the Git Tools Rewriting History section of Git's official documentation
+echo "Git provides a command called rebase for integrating changes from one branch onto another. Rebasing is like merging but has a few fundamental differences:" >> README.md
+git add README.md
+git commit -m "Add"
+
+# (d) Add the second paragraph from the same page
+echo "The branch that the changes are applied to is the one you’re on when you run the git rebase command. In other words, if you want to apply changes from another branch onto the current branch, you’d switch to the source branch and then run git rebase." >> README.md
+git add README.md
+git commit -m "Add"
+
+# (e) Add the first and second paragraphs from the "Changing Multiple Commit Messages" section in the same page
+echo "If you want to edit several commit messages in the same series, pass the number of commits to the -i option of git rebase. For example, to change the last three commit messages, run git rebase -i HEAD~3." >> README.md
+echo "Git opens an editor with each selected commit message. Make the necessary changes and save the file to continue. To skip a commit, delete its line from the file. When you’re finished editing the file, Git rewinds your repository to the commit just before the first of the selected commits and replays each commit in turn, applying your changes." >> README.md
+git add README.md
+git commit -m "Add first and second paragraphs"
+
+# (f) Remove the second paragraph from your file
+sed -i '5d' README.md
+git add README.md
+git commit -m "Remove second paragraph"
+
+# (g) Add the missing title "Changing Multiple Commit Messages" on a line just before the two paragraphs you copied
+sed -i '4i Changing Multiple Commit Messages' README.md
+git add README.md
+git commit -m "Add title for the section"
+
+# (h) Add a final line with your name or alias
+echo "- John Doe" >> README.md
+git add README.md
+git commit -m "Add"
+
+# 4. Use interactive rebase to have a single commit with message "Explain git interactive rebase."
+git rebase -i HEAD~8
+# Change the "pick" command to "squash" for all but the first commit, save and exit the editor
+# Change the commit message to "Explain git interactive rebase.", save and exit the editor
+
+# 5. Push your branch on the remote repository
+git push -u origin sami
